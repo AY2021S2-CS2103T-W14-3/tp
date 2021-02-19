@@ -1,7 +1,5 @@
 package seedu.address.testutil;
 
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_AMY;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_AMY;
@@ -22,8 +20,8 @@ import seedu.address.model.person.Person;
  * A utility class containing a list of {@code Person} objects to be used in tests.
  */
 public class TypicalPersons {
-
-    public static final Person ALICE = new PersonBuilder().withName("Alice Pauline").withEmail("alice@example.com")
+    public static final Person ALICE = new PersonBuilder().withName("Alice Pauline")
+            .withEmail("alice@example.com")
             .withPhone("94351253")
             .withTags("friends").build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
