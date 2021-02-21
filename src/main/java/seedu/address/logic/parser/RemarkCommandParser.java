@@ -13,6 +13,12 @@ import seedu.address.model.person.Remark;
 
 public class RemarkCommandParser {
 
+    /**
+     * parses the command line arguments entered by user
+     *
+     * @param args the arguments entered by user
+     * @return the RemarkCommand created from the parsed arguments
+     */
     public RemarkCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args,
