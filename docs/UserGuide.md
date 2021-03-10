@@ -236,7 +236,7 @@ Examples: `viewTasks`
 
 Adds a member and his/ her contract number to contact list
 
-Format: `addMember NAME`
+Format: `addMember NAME phone number`
 
 Examples: `addMember Dylan 64529356`
 
