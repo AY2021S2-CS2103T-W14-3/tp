@@ -14,11 +14,16 @@ public class ViewMembersCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Listed all members in this CCA!";
 
+    public static final String MESSAGE_NO_MEMBERS = "There are currently no Members in the list!";
+
 
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        if (model.getFilteredPersonList().isEmpty()) {
+            return new CommandResult(MESSAGE_NO_MEMBERS);
+        }
         return new CommandResult(MESSAGE_SUCCESS);
     }
 }

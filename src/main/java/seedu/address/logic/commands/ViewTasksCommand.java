@@ -10,9 +10,9 @@ public class ViewTasksCommand extends Command {
 
     public static final String COMMAND_WORD = "viewTasks";
 
-    public static final String MESSAGE_SUCCESS = "Listed all Tasks";
+    public static final String MESSAGE_SUCCESS = "Listed all Tasks!";
 
-    public static final String MESSAGE_NO_TASKS = "There are currently no Tasks in the list";
+    public static final String MESSAGE_NO_TASKS = "There are currently no Tasks in the list!";
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
