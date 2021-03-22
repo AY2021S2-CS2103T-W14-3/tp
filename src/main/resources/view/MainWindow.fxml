@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Scene?>
 <?import javafx.scene.control.Label?>
@@ -20,6 +21,9 @@
   </icons>
   <scene>
     <Scene>
+        <stylesheets>
+            <URL value="@HeyMatez.css" />
+        </stylesheets>
         <VBox>
             <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
                 <Menu mnemonicParsing="false" text="File">
