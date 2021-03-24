@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.AddressBook;
+import seedu.address.model.HeyMatez;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
@@ -112,12 +112,12 @@ public class AddTaskCommandTest {
 
 
         @Override
-        public void setAddressBook(ReadOnlyAddressBook newData) {
+        public void setHeyMatez(ReadOnlyAddressBook newData) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public ReadOnlyAddressBook getAddressBook() {
+        public ReadOnlyAddressBook getHeyMatez() {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -209,8 +209,8 @@ public class AddTaskCommandTest {
         }
 
         @Override
-        public ReadOnlyAddressBook getAddressBook() {
-            return new AddressBook();
+        public ReadOnlyAddressBook getHeyMatez() {
+            return new HeyMatez();
         }
     }
 }

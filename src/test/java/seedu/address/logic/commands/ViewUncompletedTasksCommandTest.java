@@ -21,7 +21,7 @@ public class ViewUncompletedTasksCommandTest {
     @BeforeEach
     public void setUp() {
         model = new ModelManager(TypicalTasks.getTypicalAddressBook(), new UserPrefs());
-        expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        expectedModel = new ModelManager(model.getHeyMatez(), new UserPrefs());
     }
 
     @Test

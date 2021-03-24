@@ -49,12 +49,12 @@ public interface Model {
     void setAddressBookFilePath(Path addressBookFilePath);
 
     /**
-     * Replaces address book data with the data in {@code addressBook}.
+     * Replaces address book data with the data in {@code heyMatez}.
      */
-    void setAddressBook(ReadOnlyAddressBook addressBook);
+    void setHeyMatez(ReadOnlyAddressBook heyMatez);
 
-    /** Returns the AddressBook */
-    ReadOnlyAddressBook getAddressBook();
+    /** Returns the HeyMatez */
+    ReadOnlyAddressBook getHeyMatez();
 
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.

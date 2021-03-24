@@ -38,7 +38,7 @@ public class DoneTaskCommandTest {
 
         String expectedMessage = DoneTaskCommand.MESSAGE_DONE_TASK_SUCCESS;
 
-        ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        ModelManager expectedModel = new ModelManager(model.getHeyMatez(), new UserPrefs());
         expectedModel.setTask(taskToMarkDone, doneTask);
 
         assertCommandSuccess(doneCommand, model, expectedMessage, expectedModel);
@@ -63,7 +63,7 @@ public class DoneTaskCommandTest {
 
         String expectedMessage = DoneTaskCommand.MESSAGE_DONE_TASK_SUCCESS;
 
-        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getHeyMatez(), new UserPrefs());
 
         expectedModel.setTask(taskToMarkDone, doneTask);
         showNoTask(expectedModel);
@@ -84,7 +84,7 @@ public class DoneTaskCommandTest {
 
         Index outOfBoundIndex = INDEX_SECOND_TASK;
         // ensures that outOfBoundIndex is still in bounds of address book list
-        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getTaskList().size());
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getHeyMatez().getTaskList().size());
 
         DoneTaskCommand doneCommand = new DoneTaskCommand(outOfBoundIndex);
 

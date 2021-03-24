@@ -1,6 +1,6 @@
 package seedu.address.model.util;
 
-import seedu.address.model.AddressBook;
+import seedu.address.model.HeyMatez;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -15,7 +15,7 @@ import seedu.address.model.task.TaskStatus;
 import seedu.address.model.task.Title;
 
 /**
- * Contains utility methods for populating {@code AddressBook} with sample data.
+ * Contains utility methods for populating {@code HeyMatez} with sample data.
  */
 public class SampleDataUtil {
     public static Person[] getSamplePersons() {
@@ -52,7 +52,7 @@ public class SampleDataUtil {
     }
 
     public static ReadOnlyAddressBook getSampleAddressBook() {
-        AddressBook sampleAb = new AddressBook();
+        HeyMatez sampleAb = new HeyMatez();
         for (Person samplePerson : getSamplePersons()) {
             sampleAb.addPerson(samplePerson);
         }

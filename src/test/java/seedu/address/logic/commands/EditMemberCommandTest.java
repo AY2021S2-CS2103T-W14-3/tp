@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.Messages;
 import seedu.address.logic.commands.EditMemberCommand.EditMemberDescriptor;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.AddressBook;
+import seedu.address.model.HeyMatez;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
@@ -46,7 +46,7 @@ public class EditMemberCommandTest {
 
         String expectedMessage = String.format(EditMemberCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
         expectedModel.setPerson(model.getFilteredPersonList().get(0), editedPerson);
 
         assertCommandSuccess(editMemberCommand, model, expectedMessage, expectedModel);
@@ -67,7 +67,7 @@ public class EditMemberCommandTest {
 
         String expectedMessage = String.format(EditMemberCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
         expectedModel.setPerson(lastPerson, editedPerson);
 
         assertCommandSuccess(editMemberCommand, model, expectedMessage, expectedModel);
@@ -83,7 +83,7 @@ public class EditMemberCommandTest {
 
         String expectedMessage = String.format(EditMemberCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
 
         assertCommandSuccess(editMemberCommand, model, expectedMessage, expectedModel);
     }
@@ -111,7 +111,7 @@ public class EditMemberCommandTest {
 
         String expectedMessage = String.format(EditMemberCommand.MESSAGE_EDIT_PERSON_SUCCESS, editedPerson);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
         expectedModel.setPerson(model.getFilteredPersonList().get(0), editedPerson);
 
         assertCommandSuccess(editMemberCommand, model, expectedMessage, expectedModel);
@@ -137,7 +137,7 @@ public class EditMemberCommandTest {
         Person personInList = null;
 
         // edit person in filtered list into a duplicate in address book
-        for (Person person : model.getAddressBook().getPersonList()) {
+        for (Person person : model.getHeyMatez().getPersonList()) {
             Name currentName = person.getName();
 
             if (currentName.equals(parsedNameBenson)) {

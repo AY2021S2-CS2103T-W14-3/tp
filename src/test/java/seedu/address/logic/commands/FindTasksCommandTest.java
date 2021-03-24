@@ -24,7 +24,7 @@ import seedu.address.testutil.TypicalTasks;
  */
 public class FindTasksCommandTest {
     private Model model = new ModelManager(TypicalTasks.getTypicalAddressBook(), new UserPrefs());
-    private Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+    private Model expectedModel = new ModelManager(model.getHeyMatez(), new UserPrefs());
 
     @Test
     public void equals() {

@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.AddressBook;
+import seedu.address.model.HeyMatez;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
@@ -42,7 +42,7 @@ public class EditTaskCommandTest {
 
         String expectedMessage = String.format(EditTaskCommand.MESSAGE_EDIT_TASK_SUCCESS, editedTask);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
         expectedModel.setTask(model.getFilteredTaskList().get(0), editedTask);
 
         assertCommandSuccess(editTaskCommand, model, expectedMessage, expectedModel);
@@ -64,7 +64,7 @@ public class EditTaskCommandTest {
 
         String expectedMessage = String.format(EditTaskCommand.MESSAGE_EDIT_TASK_SUCCESS, editedTask);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
         expectedModel.setTask(lastTask, editedTask);
 
         assertCommandSuccess(editTaskCommand, model, expectedMessage, expectedModel);
@@ -78,7 +78,7 @@ public class EditTaskCommandTest {
 
         String expectedMessage = String.format(EditTaskCommand.MESSAGE_EDIT_TASK_SUCCESS, editedTask);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
 
         assertCommandSuccess(editTaskCommand, model, expectedMessage, expectedModel);
     }
@@ -95,7 +95,7 @@ public class EditTaskCommandTest {
 
         String expectedMessage = String.format(EditTaskCommand.MESSAGE_EDIT_TASK_SUCCESS, editedTask);
 
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
+        Model expectedModel = new ModelManager(new HeyMatez(model.getHeyMatez()), new UserPrefs());
         expectedModel.setTask(model.getFilteredTaskList().get(0), editedTask);
 
         assertCommandSuccess(editTaskCommand, model, expectedMessage, expectedModel);
@@ -105,7 +105,7 @@ public class EditTaskCommandTest {
     public void execute_invalidTaskIndexUnfilteredList_failure() {
         showTaskAtIndex(model, INDEX_FIRST_TASK);
         Index outOfBound = INDEX_SECOND_TASK;
-        assertTrue(outOfBound.getZeroBased() < model.getAddressBook().getTaskList().size());
+        assertTrue(outOfBound.getZeroBased() < model.getHeyMatez().getTaskList().size());
 
         EditTaskCommand editTaskCommand = new EditTaskCommand(outOfBound,
                 new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_MARATHON).build());
@@ -122,7 +122,7 @@ public class EditTaskCommandTest {
         showTaskAtIndex(model, INDEX_FIRST_TASK);
         Index outOfBound = INDEX_SECOND_TASK;
 
-        assertTrue(outOfBound.getZeroBased() < model.getAddressBook().getTaskList().size());
+        assertTrue(outOfBound.getZeroBased() < model.getHeyMatez().getTaskList().size());
 
         EditTaskCommand editTaskCommand = new EditTaskCommand(outOfBound,
                 new EditTaskDescriptorBuilder().withTitle(VALID_TITLE_MARATHON).build());

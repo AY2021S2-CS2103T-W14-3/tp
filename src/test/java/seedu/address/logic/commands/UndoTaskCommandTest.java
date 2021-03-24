@@ -38,7 +38,7 @@ public class UndoTaskCommandTest {
 
         String expectedMessage = UndoTaskCommand.MESSAGE_UNDO_TASK_SUCCESS;
 
-        ModelManager expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        ModelManager expectedModel = new ModelManager(model.getHeyMatez(), new UserPrefs());
         expectedModel.setTask(taskToMarkUncompleted, undoTask);
 
         assertCommandSuccess(undoTaskCommand, model, expectedMessage, expectedModel);
@@ -63,7 +63,7 @@ public class UndoTaskCommandTest {
 
         String expectedMessage = UndoTaskCommand.MESSAGE_UNDO_TASK_SUCCESS;
 
-        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
+        Model expectedModel = new ModelManager(model.getHeyMatez(), new UserPrefs());
 
         expectedModel.setTask(taskToMarkUncompleted, doneTask);
         showNoTask(expectedModel);
@@ -84,7 +84,7 @@ public class UndoTaskCommandTest {
 
         Index outOfBoundIndex = INDEX_SECOND_TASK;
         // ensures that outOfBoundIndex is still in bounds of address book list
-        assertTrue(outOfBoundIndex.getZeroBased() < model.getAddressBook().getTaskList().size());
+        assertTrue(outOfBoundIndex.getZeroBased() < model.getHeyMatez().getTaskList().size());
 
         UndoTaskCommand undoTaskCommand = new UndoTaskCommand(outOfBoundIndex);
 
