@@ -104,6 +104,10 @@ public class Task {
         return assignees.contains(assignee);
     }
 
+    public boolean removeAssignee(Assignee assignee) {
+        return assignees.remove(assignee);
+    }
+
     public boolean isUnassigned() {
         return assignees.isEmpty();
     }

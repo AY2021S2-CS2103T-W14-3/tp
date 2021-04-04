@@ -8,6 +8,8 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.model.assignee.Assignee;
+import seedu.address.model.person.Name;
 import seedu.address.model.task.exceptions.TaskNotFoundException;
 
 /**
@@ -82,6 +84,23 @@ public class UniqueTaskList implements Iterable<Task> {
             throw new TaskNotFoundException();
         }
     }
+
+    /**
+     * Removes the Assignees from tasks in the current task list
+     */
+    public void removeAssignee(Name name) {
+        requireNonNull(name);
+        Assignee assignee = new Assignee(name.fullName);
+
+        for (int i = 0; i < internalList.size(); i++) {
+            Task task = internalList.get(i);
+            if (task.hasAssignee(assignee)) {
+                task.removeAssignee(assignee);
+            }
+        }
+
+    }
+
 
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
