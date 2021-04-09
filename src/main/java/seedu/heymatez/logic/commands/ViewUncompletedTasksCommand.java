@@ -1,6 +1,7 @@
 package seedu.heymatez.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.heymatez.commons.core.Messages.MESSAGE_NO_UNCOMPLETED_FOUND;
 import static seedu.heymatez.model.Model.PREDICATE_SHOW_ALL_UNCOMPLETED_TASKS;
 
 import seedu.heymatez.logic.commands.exceptions.CommandException;
@@ -19,6 +20,10 @@ public class ViewUncompletedTasksCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
         model.updateFilteredTaskList(PREDICATE_SHOW_ALL_UNCOMPLETED_TASKS);
-        return new CommandResult(MESSAGE_SUCCESS);
+        if(model.getFilteredTaskList().size() == 0) {
+            return new CommandResult(MESSAGE_NO_UNCOMPLETED_FOUND);
+        } else {
+            return new CommandResult(MESSAGE_SUCCESS);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package seedu.heymatez.logic.commands;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.heymatez.commons.core.Messages.MESSAGE_NO_TASKS_FOR_MEMBER_FOUND;
 
 import seedu.heymatez.model.Model;
 import seedu.heymatez.model.task.TaskContainsAssigneePredicate;
@@ -28,7 +29,11 @@ public class FindMemberTasksCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredTaskList(predicate);
-        return new CommandResult(MESSAGE_SUCCESS);
+        if(model.getFilteredTaskList().size() == 0) {
+            return new CommandResult(MESSAGE_NO_TASKS_FOR_MEMBER_FOUND);
+        } else {
+            return new CommandResult(MESSAGE_SUCCESS);
+        }
     }
 
     @Override

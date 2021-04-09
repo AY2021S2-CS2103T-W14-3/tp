@@ -151,13 +151,14 @@ Example: `help`
 <a name="addMember"></a>
 ### 1. Add Member: `addMember`
 
-With new members joining the club, you can add a new member along with his/her contact number to the contact list.
+With new members joining the club, you can add a new member along with his/her contact number and email to the contact list.
 
 Format: `addMember NAME -p PHONE_NUMBER -e EMAIL [-r ROLE]`
 
 * The field ROLE is optional.
 * NAME and ROLE fields can take on any values with alphanumeric characters.
 * PHONE field has to have a minimum length of 3 digits and maximum length of 15 digits.
+* EMAIL field must be valid with a local-part followed by '@' and then the domain name.
 * If role field is not specified, person will be assigned a default role of member.
 
 Assumptions:
@@ -205,8 +206,8 @@ Format: `editMember NAME_IN_LIST [-n NEW_NAME] [-p NEW_PHONE_NUMBER] [-e NEW_EMA
 * The fields NEW_NAME, NEW_PHONE_NUMBER, NEW_EMAIL, NEW_ROLE are all optional.
 * At least one of the optional fields must be provided.
 * ROLE field can take on any values with alphanumeric characters.
-* Existing values will be updated to the input values.
 * NEW_NAME field can take on any values with alphanumeric characters.
+* Existing values will be updated to the input values.
 
 Examples: 
 * `editMember Alice -n Alice Tan`
@@ -253,7 +254,7 @@ Format: `addTask TITLE -d DESCRIPTION -b DEADLINE [-s STATUS] [-p PRIORITY] [-a 
 * ASSIGNEE is case-sensitive and format-sensitive: "Alex Yeoh" and "Alex     Yeoh" are not the same assignee.
 
 <div markdown="span" class="alert alert-primary"> :bulb: **Tip:**
-A task can have any number of assignees (including 0). To add multiple assignees, simply use multiple assignees prefix. 
+A task can have any number of assignees (including 0). To add multiple assignees, simply use multiple assignee prefixes. 
 </div>
 
 Examples: 
@@ -349,7 +350,7 @@ This feature allows you to find all tasks with deadlines before the date you hav
 Format: `findBefore DATE`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-The date specified must follow the format `YYYY-MM-DD`.
+The date specified must follow the format `YYYY-MM-DD` and be a valid date in the calendar.
 </div>
 
 Examples: 
@@ -412,7 +413,7 @@ This feature allows you to find all tasks assigned to a single Member.
 Format: `findTasksFor NAME`
 
 <div markdown="span" class="alert alert-primary"> :bulb: **Tip:**
-The NAME specified can only belong to 1 Member while a NAME that does not exist in the Member List will return 0 tasks listed
+The NAME specified can only belong to 1 Member while a NAME that does not exist in the Member List will return no tasks assigned to member.
 </div>
 
 Examples: 

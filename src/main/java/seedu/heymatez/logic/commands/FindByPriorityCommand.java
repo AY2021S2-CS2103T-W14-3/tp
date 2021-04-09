@@ -2,6 +2,7 @@ package seedu.heymatez.logic.commands;
 
 
 import static java.util.Objects.requireNonNull;
+import static seedu.heymatez.commons.core.Messages.MESSAGE_NO_PRIORITY_FOUND;
 import static seedu.heymatez.commons.core.Messages.MESSAGE_TASKS_LISTED_OVERVIEW;
 
 import seedu.heymatez.model.Model;
@@ -30,8 +31,12 @@ public class FindByPriorityCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.updateFilteredTaskList(predicate);
-        return new CommandResult(
-                String.format(MESSAGE_TASKS_LISTED_OVERVIEW, model.getFilteredTaskList().size()));
+        if(model.getFilteredTaskList().size() == 0) {
+            return new CommandResult(MESSAGE_NO_PRIORITY_FOUND);
+        } else {
+            return new CommandResult(
+                    String.format(MESSAGE_TASKS_LISTED_OVERVIEW, model.getFilteredTaskList().size()));
+        }
     }
 
     @Override
