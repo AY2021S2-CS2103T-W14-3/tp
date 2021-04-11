@@ -639,7 +639,7 @@ testers are expected to do more *exploratory* testing.
       Expected: No member is added since the phone number given is invalid. Error details shown in the status bar.
 
    1. Other incorrect commands to try: `addMember`, `addMember Alice`, `addMember Alice p/12345678`, `addMember Alice e/Alice@gmail.com` <br>
-      Expected: similar to previous.
+      Expected: similar to previous test case.
 
 ### Viewing members
 
@@ -661,7 +661,7 @@ testers are expected to do more *exploratory* testing.
       Expected: No task marked as **completed**. Error details is shown in the status bar.      
       
    1. Other incorrect commands to try: `done`, `done -1` 
-      Expected: Similar to previous. 
+      Expected: similar to previous test case.
       
 ### Mark a task as uncompleted
 
@@ -676,7 +676,7 @@ testers are expected to do more *exploratory* testing.
       Expected: No task marked as **uncompleted**. Error details is shown in the status bar.      
       
    1. Other incorrect commands to try: `undo`, `undo -1` 
-      Expected: Similar to previous.   
+      Expected: similar to previous test case.   
 
 ### Find tasks by priority
 
@@ -701,7 +701,7 @@ testers are expected to do more *exploratory* testing.
       Expected: Error message displayed in the status bar.
 
    1. Other incorrect commands to try: `findPriority, findPriority LOW`, `findPriority MeDIum`, etc.
-      Expected: Similar to previous.   
+      Expected: similar to previous test case.  
 
 ### Find tasks assigned to a member
 
